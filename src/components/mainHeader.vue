@@ -8,17 +8,24 @@
             <span class="mx-1 text-sm font-medium">Русский</span>
             <span class="icon-icon-chevron-bottom mr-24"></span>
           </button>
-          <a class="flex items-center" href="tel:+998885005000">
-            <span class="icon-icon-phone"></span>
-            <spam class="font-medium text-sm">+998 91 019 05 44</spam>
-          </a>
+
+          <div class="group gap-1">
+            <a
+              class="flex items-center group-hover:text-blue transition-all"
+              href="tel:+998885005000"
+            >
+              <span class="icon-phone"></span>
+              <spam class="font-medium text-sm">+998 91 019 05 44</spam>
+            </a>
+          </div>
         </div>
+
         <div class="flex items-center">
-          <span class="icon-icon-shape mr-2"></span>
+          <span class="icon-heart mr-2"></span>
           <p class="font-semibold text-xl mr-8">Избранное</p>
           <button @click="openModal" class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg">
             <p class="font-semibold text-xl mr-2">Войти</p>
-            <span class="icon-icon-enter"></span>
+            <span class="icon-login text-20"></span>
           </button>
           <baseModel
             :title="entranceModul.title"
@@ -54,7 +61,9 @@
       <div
         class="px-4 py-3.5 absolute left-[50%] translate-x-[-50%] top-0 shadow-3xl rounded-b-[20px] bg-white"
       >
-        <img class="" src="../assets/images/logo.svg" alt="logo" />
+        <a href="../../index.html">
+          <img class="" src="../assets/images/logo.svg" alt="logo" />
+        </a>
       </div>
     </div>
   </div>

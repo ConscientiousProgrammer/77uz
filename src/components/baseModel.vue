@@ -9,7 +9,7 @@
       <div class="flex items-center justify-between">
         <h1 class="font-bold text-24">{{ title }}</h1>
         <button @click="closeModal">
-          <span class="icon-icon-x text-24"></span>
+          <span class="icon-cancel text-24"></span>
         </button>
       </div>
       <div>
@@ -32,7 +32,7 @@ const props = defineProps({
 
 const emit = defineEmits(['modal-close'])
 
-const clFoseModal = () => {
+const closeModal = () => {
   emit('modal-close')
 }
 // const target = ref(null)

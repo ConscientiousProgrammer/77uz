@@ -16,18 +16,15 @@
         <div class="flex items-center">
           <span class="icon-icon-shape mr-2"></span>
           <p class="font-semibold text-xl mr-8">Избранное</p>
-          <button
-            @click="isModal = true"
-            class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg"
-          >
+          <button @click="openModal" class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg">
             <p class="font-semibold text-xl mr-2">Войти</p>
             <span class="icon-icon-enter"></span>
           </button>
           <baseModel
-            v-if="isModal"
             :title="entranceModul.title"
             :paragraph="entranceModul.paragraph"
-            :@close="closeModal"
+            :isOpen="isModalOpened"
+            @modal-close="closeModal"
           >
             <form class="mt-7 mb-2" action="">
               <label for="login">Логин</label><br />
@@ -68,5 +65,14 @@ import { ref } from 'vue'
 import baseModel from './baseModel.vue'
 import { entranceModul } from '../data/baseModul'
 
-const isModal = ref(false)
+const isModalOpened = ref(false)
+
+const openModal = () => {
+  isModalOpened.value = true
+}
+const closeModal = () => {
+  isModalOpened.value = false
+}
+
+// const closeModal = ref(false);
 </script>

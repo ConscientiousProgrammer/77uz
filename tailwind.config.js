@@ -29,11 +29,11 @@ export default {
       10: '10px',
       24: '24px',
       14: '14px',
-      20: '20px'
+      20: '20px',
     },
     extend: {
       colors: {
-        blue: '#1fb6ff',
+        blue: '#388FF3',
         purple: '#7e5bef',
         pink: '#ff49db',
         orange: '#ff7849',

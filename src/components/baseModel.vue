@@ -7,9 +7,9 @@
     >
       <div class="flex items-center justify-between">
         <h1 class="font-bold text-24">{{ title }}</h1>
-        <button @click=$emit('close')>
+        <!-- <button @click=$emit('close')> -->
           <span class="icon-icon-x text-24"></span>
-        </button>
+        <!-- </button> -->
       </div>
       <div>
         <p class="font-medium text-14 text-gray leading-4 mt-2">{{ paragraph }}</p>

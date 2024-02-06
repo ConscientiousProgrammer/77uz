@@ -24,7 +24,7 @@
           <span class="icon-heart mr-1 font-semibold text-blue text-20"></span>
           <a href="#" class="font-semibold text-xl mr-8 hover:text-blue transition-all">Избранное</a>
           <button
-            @click="isModal = true"
+            @click="openModal"
             class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg hover:bg-[#d5d8db] transition-all">
 
             <p class="font-semibold text-xl mr-2">Войти</p>

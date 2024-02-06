@@ -15,7 +15,7 @@
               href="tel:+998885005000"
             >
               <span class="icon-phone"></span>
-              <spam class="font-medium text-sm">+998 91 019 05 44</spam>
+              <spam class="font-medium text-sm">+998910190544</spam>
             </a>
           </div>
         </div>

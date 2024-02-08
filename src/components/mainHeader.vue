@@ -3,11 +3,102 @@
     <div class="xl:container mx-auto">
       <div class="h-20 flex justify-between items-center">
         <div class="flex items-center">
-          <button class="flex items-center">
-            <img class="w-5 h-5" src="../assets/images/Language-ru.svg" alt="language-ru" />
-            <span class="mx-1 text-sm font-medium">Русский</span>
-            <span class="icon-icon-chevron-bottom mr-24"></span>
-          </button>
+
+          <div class="relative z-0 w-[120px]">
+          <div class="mr-6">
+            <button
+              v-click-outside="closeLanguages"
+              @click="handleLanguages"
+              class="flex items-center gap-2 text-sm font-medium duration-300 text-dark leading-130 hover:text-blue transition-300 max-sm:uppercase"
+            >
+              <span
+                v-if="currentLocale === 'ru'"
+                class="flex items-center justify-center space-x-2"
+                ><img
+                  class="w-5 h-5 shrink-0"
+                  src="../assets/LanguageRU.svg"
+                  alt="Русский"
+                />
+                <span
+                  class="relative w-full py-2 leading-6 duration-300 sm:hidden group-hover/lang:text-blue transition-300 max-sm:uppercase"
+                  >ru</span
+                >
+                <span
+                  class="relative w-full py-2 leading-6 duration-300 max-sm:hidden group-hover/lang:text-blue transition-300 max-sm:uppercase"
+                  >Русский</span
+                ></span
+              >
+              <span v-else class="flex items-center justify-center space-x-2">
+                <img
+                  class="w-5 h-5 shrink-0"
+                  src="../assets/LanguageUZ.svg"
+                  alt="O’zbek"
+                />
+                <span
+                  class="relative w-full py-2 leading-6 duration-300 sm:hidden group-hover/lang:text-blue transition-300 max-sm:uppercase"
+                  >uz</span
+                >
+                <span
+                  class="relative w-full py-2 leading-6 duration-300 group-hover/lang:text-blue transition-300 max-sm:uppercase max-sm:hidden"
+                  >O’zbek</span
+                ></span
+              >
+              <i
+                class="text-dark transition icon-down text-20"
+                :class="{ 'rotate-180': toggleLanguages }"
+              ></i>
+            </button>
+
+          </div>
+          <div>
+            <div
+              v-show="toggleLanguages"
+              class="absolute left-0 min-w-full overflow-hidden translate-y-full bg-white rounded-lg shadow w-max -bottom-1 z-1 dropdown-shadow"
+            >
+              <div>
+                <button
+                  @click="changeLocale('ru')"
+                  class="flex items-center gap-2 px-4 cursor-pointer group/lang"
+                >
+                  <img
+                    class="w-5 h-5 shrink-0"
+                    src="../assets/LanguageRU.svg"
+                    alt="Русский"
+                  />
+                  <span
+                    class="relative w-full py-2 leading-6 duration-300 sm:hidden group-hover/lang:text-blue transition-300 max-sm:uppercase"
+                    :class="{ 'text-blue': locale === 'ru' }"
+                    >ru</span
+                  >
+                  <span
+                    class="relative w-full py-2 leading-6 duration-300 group-hover/lang:text-blue transition-300 max-sm:uppercase max-sm:hidden"
+                    :class="{ 'text-blue': locale === 'ru' }"
+                    >Русский</span
+                  >
+                </button>
+                <button
+                  @click="changeLocale('uz')"
+                  class="flex items-center gap-2 px-4 cursor-pointer group/lang"
+                >
+                  <img
+                    class="w-5 h-5 shrink-0"
+                    src="../assets/LanguageUZ.svg"
+                    alt="O’zbek"
+                  />
+                  <span
+                    class="relative w-full py-2 leading-6 duration-300 sm:hidden group-hover/lang:text-blue transition-300 max-sm:uppercase"
+                    :class="{ 'text-blue': locale === 'uz' }"
+                    >uz</span
+                  >
+                  <span
+                    class="relative w-full py-2 leading-6 group-hover/lang:text-blue transition-300 max-sm:uppercase max-sm:hidden"
+                    :class="{ 'text-blue': locale === 'uz' }"
+                    >O’zbek</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
 
           <div class="group gap-1">
             <a
@@ -76,6 +167,8 @@
 import { ref } from 'vue'
 import baseModel from './baseModel.vue'
 import { entranceModul } from '../data/baseModul'
+import { useI18n } from "vue-i18n";
+const { locale } = useI18n();
 
 const isModalOpened = ref(false)
 
@@ -84,7 +177,39 @@ const openModal = () => {
 }
 const closeModal = () => {
   isModalOpened.value = false
-}
+};
+
+const toggleLanguages = ref(false);
+
+const handleLanguages = () => {
+  toggleLanguages.value = !toggleLanguages.value;
+};
+
+const closeLanguages = () => {
+  toggleLanguages.value = false;
+};
+
+const currentLocale = ref(localStorage.getItem("locale"));
+
+const changeLocale = (l) => {
+  localStorage.setItem("locale", l);
+  currentLocale.value = l;
+  locale.value = l;
+};
+
 
 // const closeModal = ref(false);
 </script>
+
+<style>
+  .fade-up-enter-active,
+  .fade-up-leave-active {
+    transition: all 0.5s ease;
+  }
+
+  .fade-up-enter-from,
+  .fade-up-leave-to {
+    opacity: 0;
+    transform: translateY(90%);
+  }
+</style>

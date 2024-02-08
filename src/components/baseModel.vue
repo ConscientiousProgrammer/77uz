@@ -18,6 +18,9 @@
       <slot></slot>
     </div>
   </div>
+  <div>
+    salom
+  </div>
 </template>
 
 <script setup>

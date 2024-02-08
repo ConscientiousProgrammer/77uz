@@ -24,6 +24,9 @@
 import { defineProps, defineEmits, ref } from 'vue'
 // import { onClickOutside } from '@vueuse/core'
 
+// const target = ref(null)
+// onClickOutside(target, () => emit('modal-close'))
+
 const props = defineProps({
   title: String,
   paragraph: String,
@@ -35,8 +38,6 @@ const emit = defineEmits(['modal-close'])
 const closeModal = () => {
   emit('modal-close')
 }
-// const target = ref(null)
-// onClickOutside(target, () => emit('modal-close'))
 
 // defineProps({
 //   // item {
@@ -54,7 +55,4 @@ const closeModal = () => {
 //   paragraph: String,
 //   closeModal: Boolean
 // })
-// const emit = defineEmits({
-//     click: false,
-// });
 </script>

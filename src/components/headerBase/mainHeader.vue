@@ -4,7 +4,7 @@
       <div class="h-20 flex justify-between items-center">
         <div class="flex items-center">
           <button class="flex items-center">
-            <img class="w-5 h-5" src="../assets/images/Language-ru.svg" alt="language-ru" />
+            <img class="w-5 h-5" src="../../assets/images/Language-ru.svg" alt="language-ru" />
             <span class="mx-1 text-sm font-medium">Русский</span>
             <span class="icon-icon-chevron-bottom mr-24"></span>
           </button>
@@ -22,11 +22,13 @@
 
         <div class="flex items-center">
           <span class="icon-heart mr-1 font-semibold text-blue text-20"></span>
-          <a href="#" class="font-semibold text-xl mr-8 hover:text-blue transition-all">Избранное</a>
+          <a href="#" class="font-semibold text-xl mr-8 hover:text-blue transition-all"
+            >Избранное</a
+          >
           <button
             @click="openModal"
-            class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg hover:bg-[#d5d8db] transition-all">
-
+            class="flex items-center py-2.5 px-6 bg-gray-light rounded-lg hover:bg-[#d5d8db] transition-all"
+          >
             <p class="font-semibold text-xl mr-2">Войти</p>
             <span class="icon-login text-20"></span>
           </button>
@@ -65,7 +67,7 @@
         class="px-4 py-3.5 absolute left-[50%] translate-x-[-50%] top-0 shadow-3xl rounded-b-[20px] bg-white"
       >
         <a href="../../index.html">
-          <img class="" src="../assets/images/logo.svg" alt="logo" />
+          <img class="" src="../../assets/images/logo.svg" alt="logo" />
         </a>
       </div>
     </div>
@@ -75,7 +77,7 @@
 <script setup>
 import { ref } from 'vue'
 import baseModel from './baseModel.vue'
-import { entranceModul } from '../data/baseModul'
+import { entranceModul } from '../../data/baseModul'
 
 const isModalOpened = ref(false)
 

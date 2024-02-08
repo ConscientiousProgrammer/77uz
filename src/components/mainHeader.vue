@@ -100,6 +100,7 @@
             </div>
           </div>
 
+
           <div class="group gap-1">
             <a
               class="flex items-center group-hover:text-blue transition-all"
@@ -162,6 +163,7 @@
     </div>
   </div>
 </template>
+
 
 <script setup>
 import { ref } from 'vue'

@@ -1,3 +1,4 @@
+
 <template>
   <div class="bg-white w-full mb-76">
     <div class="xl:container mx-auto">

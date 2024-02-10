@@ -43,7 +43,7 @@
             </form>
             <a href="#" class="text-blue text-14">Забыли пароль?</a>
             <div class="mt-10">
-              <button class="w-[338px]  pt-3 pb-3 bg-[#388FF3] text-white transition-all rounded-xl hover:bg-[#539df1] ">
+              <button @click="closeModal" class="w-[338px]  pt-3 pb-3 bg-[#388FF3] text-white transition-all rounded-xl hover:bg-[#539df1] ">
                 Войти
               </button>
               <div class="mt-3 flex items-center">
@@ -84,6 +84,7 @@ const openModal = () => {
 }
 const closeModal = () => {
   isModalOpened.value = false
+  
 }
 
 const opanApplicationModul = ref(false)
@@ -94,6 +95,7 @@ const isOpanApplicationModal = () => {
 }
 const isCloseApplicationModal = () => {
   opanApplicationModul.value = false
+ 
 }
 
 // const closeModal = ref(false);

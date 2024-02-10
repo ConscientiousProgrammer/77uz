@@ -26,10 +26,12 @@ export default {
       4: '4px',
       6: '6px',
       8: '8px',
+      32: '32px',
       10: '10px',
       24: '24px',
       14: '14px',
       20: '20px',
+      16: '16px'
     },
     extend: {
       colors: {
@@ -56,7 +58,9 @@ export default {
         24: '24px'
       },
       padding: {
-        107: '107px'
+        107: '107px',
+        42: '42px',
+        420: '420px'
       },
       width: {
         26: '26px'
